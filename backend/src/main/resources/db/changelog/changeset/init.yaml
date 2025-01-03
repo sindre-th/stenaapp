@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: init
+      author: sthorb
+      changes:
+        - createTable:
+            tableName: test_table
+            columns:
+              - column:
+                  name: id
+                  type: number
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar2(50)
+              - column:
+                  name: age
+                  type: int

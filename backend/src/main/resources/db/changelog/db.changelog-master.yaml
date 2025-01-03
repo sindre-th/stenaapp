@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: changeset/init.yaml
+      relativeToChangelogFile: true

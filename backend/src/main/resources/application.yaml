@@ -1,0 +1,8 @@
+server:
+  servlet:
+    context-path: /stena
+spring:
+  liquibase:
+    contexts: ${spring.profiles.active}
+  jpa:
+    open-in-view: false
