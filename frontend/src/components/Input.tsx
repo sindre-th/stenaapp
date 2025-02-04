@@ -1,17 +1,17 @@
 import React from "react";
-import {FieldErrors, FieldValues, UseFormRegister} from "react-hook-form";
+import {FieldErrors, FieldPath, FieldValues, UseFormRegister} from "react-hook-form";
 
-interface InputProps extends React.ComponentPropsWithoutRef<"input"> {
+interface InputProps<T extends FieldValues> extends React.ComponentPropsWithoutRef<"input"> {
     label: string;
     disabled?: boolean;
-    register: UseFormRegister<FieldValues>;
+    register: UseFormRegister<T>;
     name: string;
     required?: boolean;
     errors?: FieldErrors;
     type?: "text" | "email" | "password" | "checkbox" | "number";
 }
 
-const Input = (props: InputProps) => {
+const Input = <T extends FieldValues>(props: InputProps<T>) => {
     const {
         label,
         disabled,
@@ -31,7 +31,7 @@ const Input = (props: InputProps) => {
                 {label}{required && <span style={{color: 'red'}}>*</span>}
             </label>
             <input id={name}
-                   {...register(name, {required: required && `${label} må fylles ut`})}
+                   {...register(name as FieldPath<T>, {required: required && `${label} må fylles ut`})}
                    placeholder={placeholder}
                    disabled={disabled}
                    required={required}
