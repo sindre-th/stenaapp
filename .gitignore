@@ -38,3 +38,6 @@ Thumbs.db
 *.mov
 *.wmv
 
+# Terraform
+**/.terraform*
+**/terraform.tfstate*

@@ -24,8 +24,8 @@ public class TestService {
 
     TestDto opprett(TestDto testDto) {
         TestEntity testEntity = new TestEntity();
-        testEntity.setAge(testEntity.getAge());
-        testEntity.setName(testEntity.getName());
+        testEntity.setAge(testDto.age());
+        testEntity.setName(testDto.name());
         return get(testRepository.save(testEntity).getId());
     }
 }
