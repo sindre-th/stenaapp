@@ -15,7 +15,7 @@ const Button = (props: ButtonProps) => {
     return (
         <button disabled={disabled}
                 className={_className}
-                type={type || "button"}
+                type={type ?? "button"}
                 {...rest}>
             {children}
         </button>

@@ -1,13 +1,16 @@
 interface PdfViewerProps {
     src: string;
-    width: string;
-    height: string;
+    width?: string;
+    height?: string;
 }
 
 const PdfViewer = (props: PdfViewerProps) => {
     const {src, width, height} = props;
     return (
-        <iframe src={src} width={width} height={height}></iframe>
+        <iframe title="pdf"
+                src={`${src}#page=1&zoom=133`}
+                width={width ?? "100%"}
+                height={height ?? "100%"}/>
     )
 }
 

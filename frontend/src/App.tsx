@@ -16,9 +16,12 @@ const App = () => {
     return (
         <>
             <Header/>
-            {/*{testObject && <TestForm testObject={testObject}/>}*/}
-            {!pdfUrl && <Spinner type="border" variant="primary" size="lg"/>}
-            {pdfUrl && <PdfViewer src={pdfUrl} width="100%" height="100vh"/>}
+            <div className="main-content">
+                {/*{testObject && <TestForm testObject={testObject}/>}*/}
+                {!pdfUrl && <Spinner type="border" variant="primary" size="lg"/>}
+                {pdfUrl && <PdfViewer src={pdfUrl}/>}
+            </div>
+
         </>
     )
 }

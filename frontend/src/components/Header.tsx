@@ -1,14 +1,22 @@
 const Header = () => {
     return (
-        <nav className="navbar navbar-light bg-light">
-        <div className="container-fluid">
-            <a className="navbar-brand" href="/">
-                <img src="/stena/logo.png" alt="" width="100" height="46"
-                     className="d-inline-block align-text-top"/>
-                Stena
-            </a>
-        </div>
-    </nav>
+        <header>
+            <nav className="navbar navbar-expand-md bg-body-tertiary">
+                <div className="container-fluid">
+                    <span>Logg ut</span>
+                </div>
+            </nav>
+            <nav className="navbar navbar-expand-lg">
+                <div className="container-fluid">
+                    <a className="navbar-brand" href="/">
+                        <img src={"logo.svg"}
+                             alt="Logo"
+                             height="100"
+                             className="d-inline-block align-content-center"/>
+                    </a>
+                </div>
+            </nav>
+        </header>
     );
 }
 
