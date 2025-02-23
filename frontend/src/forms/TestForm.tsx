@@ -1,14 +1,14 @@
-import Button from "../components/Button.tsx";
-import Input from "../components/Input.tsx";
-import {Test} from "../types/test.ts";
+import {testApi} from "@api/testApi.ts";
+import Button from "@components/Button.tsx";
+import Input from "@components/Input.tsx";
+import {Test} from "@interfaces/test.ts";
 import {useForm} from "react-hook-form";
-import {testApi} from "../api/testApi.ts";
 
-interface formProps {
+interface FormProps {
     testObject: Test
 }
 
-const TestForm = (props: formProps) => {
+const TestForm = (props: FormProps) => {
     const {testObject} = props;
     const {
         register,

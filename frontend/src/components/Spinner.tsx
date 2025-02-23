@@ -1,11 +1,12 @@
 interface SpinnerProps {
     variant?: "primary" | "secondary" | "success" | "info";
     size?: "lg" | "md" | "sm";
-    type: "border" | "grow"
+    type: "border" | "grow";
+    className?: string
 }
 
 const Spinner = (props: SpinnerProps) => {
-    const {type, variant, size} = props;
+    const {type, variant, size, className} = props;
 
     const renderSize = () => {
         switch (size) {
@@ -27,7 +28,7 @@ const Spinner = (props: SpinnerProps) => {
         return "";
     }
     return (
-        <div className={`spinner-${type} ${renderVariant()} ${renderSize()} `} role="status">
+        <div className={`spinner-${type} ${renderVariant()} ${renderSize()} ${className}`} role="status">
             <span className="visually-hidden">Laster...</span>
         </div>
     )

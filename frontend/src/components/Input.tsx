@@ -26,7 +26,6 @@ const Input = <T extends FieldValues>(props: InputProps<T>) => {
     } = props
     return (
         <>
-
             <label className="form-label" htmlFor={name}>
                 {label}{required && <span style={{color: 'red'}}>*</span>}
             </label>
@@ -36,7 +35,7 @@ const Input = <T extends FieldValues>(props: InputProps<T>) => {
                    disabled={disabled}
                    required={required}
                    className={`form-control ${className}`}
-                   type={type || 'text'}
+                   type={type ?? 'text'}
                    {...rest}/>
             {errors?.[name] && <div className="alert alert-danger p-0" role="alert">{`${errors[name].message}`}</div>}
         </>

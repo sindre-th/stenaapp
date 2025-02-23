@@ -2,113 +2,161 @@
 
 /* Definer CSS-variabler for light mode */
 :root {
-  --background-color: #ffffff;
-  --text-color: #000000;
-  --primary-color: #0d6efd;
-  --secondary-color: #6c757d;
-  --success-color: #198754;
-  --header-bg-color: #0d6efd;
-  --header-text-color: #ffffff;
-  --sidebar-bg-color: #f8f9fa;
-  --sidebar-text-color: #000000;
-  --footer-bg-color: #343a40;
-  --footer-text-color: #ffffff;
-  --input-bg-color: #ffffff;
-  --input-text-color: #000000;
-  --input-border-color: #ced4da;
-}
+    --stena-lightgreen-color: #f2f5f2;
+    --stena-green-color: #657b6c;
+    --stena-blue-color: #0074ba;
 
-/* Definer CSS-variabler for dark mode */
-[data-theme="dark"] {
-  --background-color: #121212;
-  --text-color: #ffffff;
-  --primary-color: #0d6efd;
-  --secondary-color: #6c757d;
-  --success-color: #198754;
-  --header-bg-color: #1a1a1a;
-  --header-text-color: #ffffff;
-  --sidebar-bg-color: #2d2d2d;
-  --sidebar-text-color: #ffffff;
-  --footer-bg-color: #1a1a1a;
-  --footer-text-color: #ffffff;
-  --input-bg-color: #333333;
-  --input-text-color: #ffffff;
-  --input-border-color: #444444;
+    --button-custom-primary-bg-color: var(--stena-blue-color);
+    --button-custom-primary-color: #000000;
+    --button-custom-secondary-bg-color: var(--stena-lightgreen-color);
+    --button-custom-secondary-color: var(--stena-green-color);
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --top-menu-text-color: var(--stena-green-color);
+    --top-menu-bg-color: var(--stena-lightgreen-color);
+    --navbar-bg-color: #ffffff;
+    --navbar-text-color: #000000;
+    --sidebar-bg-color: #f8f9fa;
+    --sidebar-text-color: #000000;
+    --footer-bg-color: #343a40;
+    --footer-text-color: #ffffff;
 }
 
 /* Grunnleggende stiler for #root */
 #root {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-/* Header */
-header {
-  /*background-color: var(--header-bg-color);*/
-  color: var(--header-text-color);
-  padding: 1rem;
+    height: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 body {
-  background-color: red;
-  padding: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: smaller;
+}
+
+/* Header */
+
+header .top-menu {
+    background-color: var(--top-menu-bg-color);
+    white-space: nowrap;
+    padding: 1rem;
+}
+
+header .top-menu a {
+    color: var(--top-menu-text-color);
+    font-weight: bold;
+
+}
+
+header a.icon-link svg {
+    height: 1.25em;
+    width: 1.25em;
+
+}
+
+header .top-menu a:link,
+header .top-menu a:visited {
+    text-decoration: none;
+}
+
+header .top-menu a:hover,
+header .top-menu a:active {
+    text-decoration: underline;
+}
+
+nav {
+    background-color: var(--navbar-bg-color);
+    color: var(--navbar-text-color);
+}
+
+nav .navbar-toggler {
+    font-size: 1.1em;
+}
+
+nav .logo {
+    height: auto;
+    width: 100%;
+}
+
+nav .logo-container {
+    max-width: 150px;
+    min-width: 90px;
 }
 
 /* Sidebar */
 .sidebar {
-  background-color: var(--sidebar-bg-color);
-  color: var(--sidebar-text-color);
-  width: 200px;
-  padding: 1rem;
+    min-width: 150px;
+    max-width: 200px;
 }
 
-/* Main content */
+.sidebar button {
+    width: 100%;
+}
+
 .main-content {
-  background-color: green;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+    height: 100vh;
+    max-width: 1010px;
+    margin: 0 1em 0 1em;
 }
 
 /* Footer */
 footer {
-  background-color: var(--footer-bg-color);
-  color: var(--footer-text-color);
-  padding: 1rem;
-  text-align: center;
-}
-
-/* Input-felter */
-input {
-  background-color: var(--input-bg-color);
-  color: var(--input-text-color);
-  border-color: var(--input-border-color);
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    padding: 1rem;
+    text-align: center;
 }
 
 /* Knapper */
 button {
-  margin: 0.25rem;
+    margin: 0.25rem;
+}
+
+.btn-custom-primary {
+    border-color: var(--button-custom-primary-color);
+    color: var(--button-custom-primary-color);
+}
+
+.btn-custom-primary:hover,
+.btn-custom-primary:focus,
+.btn-custom-primary.active {
+    background-color: var(--button-custom-primary-bg-color);
+    border-color: var(--button-custom-primary-color);
+    color: var(--button-custom-primary-color);
+}
+
+.btn-custom-secondary {
+    border-color: var(--button-custom-primary-color);
+    color: var(--button-custom-primary-color);
+}
+
+.btn-custom-secondary:hover,
+.btn-custom-secondary:focus,
+.btn-custom-secondary.active {
+    background-color: var(--button-custom-secondary-bg-color);
+    border-color: var(--button-custom-secondary-color);
+    color: var(--text-color);
+}
+
+.btn-custom-primary.active,
+.btn-custom-secondary.active {
+    border-width: 2px;
 }
 
 .spinner-border-lg {
-  width: 5rem;
-  height: 5rem;
-  border-width: 0.7rem;
+    width: 5rem;
+    height: 5rem;
+    border-width: 0.7rem;
 }
 
 .spinner-grow-lg {
-  width: 5rem;
-  height: 5rem;
+    width: 5rem;
+    height: 5rem;
 }
 
 .spinner-border-md,
 .spinner-grow-md {
-  width: 3rem;
-  height: 3rem;
+    width: 3rem;
+    height: 3rem;
 }
 

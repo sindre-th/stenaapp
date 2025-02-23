@@ -1,28 +1,27 @@
-import {useEffect, useState} from "react";
-import {testApi} from "./api/testApi.ts";
 import "./App.css"
-import Header from "./components/Header.tsx";
-import PdfViewer from "./components/PdfViewer.tsx";
-import Spinner from "./components/Spinner.tsx";
+import Home from "@pages/Home.tsx";
+import Layout from "@pages/Layout.tsx";
+import NoPage from "@pages/NoPage.tsx";
+import Step1 from "@pages/work/steps/Step1.tsx";
+import Step2 from "@pages/work/steps/Step2.tsx";
+import Work from "@pages/work/Work.tsx";
+import {Route, Routes} from "react-router-dom";
+
 
 const App = () => {
-    // const [testObject, setTestObject] = useState<Test>();
-    const [pdfUrl, setPdfUrl] = useState<string>();
-    useEffect(() => {
-        testApi.get()
-            .then(URL.createObjectURL)
-            .then(setPdfUrl);
-    }, []);
     return (
-        <>
-            <Header/>
-            <div className="main-content">
-                {/*{testObject && <TestForm testObject={testObject}/>}*/}
-                {!pdfUrl && <Spinner type="border" variant="primary" size="lg"/>}
-                {pdfUrl && <PdfViewer src={pdfUrl}/>}
-            </div>
-
-        </>
+        <Routes>
+            <Route path="/" element={<Layout/>}>
+                <Route index element={<Home/>}/>
+                <Route path="work" element={<Work/>}>
+                    <Route index element={<Step1/>}/>
+                    <Route path="step1" element={<Step1/>}/>
+                    <Route path="step2" element={<Step2/>}/>
+                    <Route path="*" element={<NoPage/>}/>
+                </Route>
+                <Route path="*" element={<NoPage/>}/>
+            </Route>
+        </Routes>
     )
 }
 

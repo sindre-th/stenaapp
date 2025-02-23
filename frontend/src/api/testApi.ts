@@ -1,5 +1,5 @@
+import {Test} from "@interfaces/test.ts";
 import {apiClient} from "./apiClient.ts";
-import {Test} from "../types/test.ts";
 
 export const testApi = {
     get: async (): Promise<Blob> => {
