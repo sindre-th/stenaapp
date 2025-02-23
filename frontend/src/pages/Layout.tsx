@@ -7,7 +7,11 @@ const Layout = () => {
         <>
             <Header/>
             <div className="container-fluid">
-                <Outlet/>
+                <div className="row justify-content-center">
+                    <div className="main-content row">
+                        <Outlet/>
+                    </div>
+                </div>
             </div>
         </>
     )

@@ -14,7 +14,7 @@ const Step1 = () => {
     return (
         <>
             {/*{testObject && <TestForm testObject={testObject}/>}*/}
-            {!pdfUrl && <Spinner type="border" variant="secondary" className="mt-5" size="lg"/>}
+            {!pdfUrl && <Spinner type="border" variant="secondary" size="lg"/>}
             {pdfUrl && <PdfViewer src={pdfUrl}/>}
         </>
     )
